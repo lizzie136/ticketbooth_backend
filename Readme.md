@@ -129,7 +129,7 @@ To prevent two users from booking the **same seat** for a given event date, we a
 ALTER TABLE ticket
 ADD CONSTRAINT uniq_ticket_eventdate_seat
 UNIQUE (event_date_id, seat_id);
-
+```
 	•	For GA tickets, seat_id is NULL → multiple NULLs are allowed.
 	•	For seated tickets, duplicates (event_date_id, seat_id) are rejected at the DB level.
 
